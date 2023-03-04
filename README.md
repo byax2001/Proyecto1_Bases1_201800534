@@ -1,1 +1,2 @@
-# Proyecto1_Bases1_201800534
+## Brandon Oswaldo Yax Campos
+## Bases de datos 1, proyecto 1
