@@ -44,4 +44,5 @@ password: oracle #PASSWORD POR DEFECTO
 alter session set "_ORACLE_SCRIPT"=true;
 create user **username** identified by **username**;
 grant all privileges to **username**;
+# PARA CONECTARSE A TRAVES DE CMD O POWERSHELL
 sqlplus **username**/**username**@**ip_externa**:1521/ORCL18
