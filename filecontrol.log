@@ -1,0 +1,9 @@
+
+SQL*Loader: Release 18.0.0.0.0 - Production on Sun Mar 5 15:16:10 2023
+Version 18.5.0.0.0
+
+Copyright (c) 1982, 2018, Oracle and/or its affiliates.  All rights reserved.
+
+SQL*Loader-704: Internal error: ulconnect: OCIServerAttach [0]
+ORA-12560: TNS:protocol adapter error
+

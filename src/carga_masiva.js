@@ -1,12 +1,12 @@
 const { spawn } = require('child_process');
-
+const oracledb =require('oracledb')
 
 // Función que ejecuta el proceso de SQL Loader
 async function cargarDatos(req, res) {
   const dbConfig = {
-    user: "system",
-    password: password,
-    connectString: "localhost:1521/xe"
+    user: "ldecast",
+    password: "ldecast",
+    connectString: "34.30.194.63:1521/ORCL18"
   };
   
   // Nombre del archivo de control de SQL Loader
@@ -38,6 +38,7 @@ async function cargarDatos(req, res) {
         if (code === 0) {
           resolve();
         } else {
+          console.log("ERRROROROORORORO")
           reject(new Error(`El proceso de SQL Loader terminó con un código de salida ${code}`));
         }
       });
@@ -45,16 +46,18 @@ async function cargarDatos(req, res) {
     
   } catch (error) {
     //console.error(error);
-    res.status(500).send(error.message);
+    //return res.send(error.message);
   } finally {
     // Cerrar la conexión a la base de datos Oracle
     if (connection) {
       try {
         await connection.close();
-        res.status(200).send('Datos cargados exitosamente');
+        //return res.send('Datos cargados exitosamente');
       } catch (error) {
         console.error(error);
       }
     }
   }
 }
+
+module.exports=cargarDatos;

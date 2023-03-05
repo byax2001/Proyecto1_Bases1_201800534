@@ -1,7 +1,7 @@
 const express =require('express');
 const morgan= require('morgan');
 const cors=require('cors')
-
+const cargam = require('./carga_masiva')
 var app=express();
 var corsOption={origin:true,optionsSuccessStatus:200};
 app.use(morgan('dev'));
@@ -19,7 +19,7 @@ app.listen(puerto, function(){
 app.get('/', function (req ,res ){
     res.json({mensaje:"hola mundo"})
 })
-//OBTENER TODOS LOS ENVIROMENTS
-app.get('/ObtenerEnvs', function (req ,res ){
-    res.send({Envs:B_datos.getInstance().getListEnviroments(1)});
+//CARGAR BASE DE DATOS
+app.get('/cBD', function (req ,res ){
+    cargam(req,res)
 })
