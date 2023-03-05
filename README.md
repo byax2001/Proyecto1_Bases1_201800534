@@ -24,13 +24,9 @@ sudo docker run -it -d -p 1521:1521 --name=oracle dockerhelp/docker-oracle-ee-18
 
 sudo docker ps -a
 
-# ---------------------------------------
-
 # INICIAR DOCKER SI YA CREARON LA IMAGEN
 
 sudo docker start [ID_CONTAINER]
-
-# ----------------------------------------
 
 sudo docker exec -it oracle /bin/bash
 
@@ -55,4 +51,4 @@ grant all privileges to **username**;
 
 # PARA CONECTARSE A TRAVES DE CMD O POWERSHELL
 
-sqlplus **username**/**username**@**ip_externa**:1521/ORCL18
+sqlplus **username**/**username**@**ip_externa maquina virtual**:1521/ORCL18
