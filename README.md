@@ -17,6 +17,7 @@ sudo docker --version
 
 
 # INSTALACION DE ORACLE 18C
+
 sudo docker pull dockerhelp/docker-oracle-ee-18c
 
 sudo docker run -it -d -p 1521:1521 --name=oracle dockerhelp/docker-oracle-ee-18c /bin/bash
@@ -24,8 +25,11 @@ sudo docker run -it -d -p 1521:1521 --name=oracle dockerhelp/docker-oracle-ee-18
 sudo docker ps -a
 
 # ---------------------------------------
+
 # INICIAR DOCKER SI YA CREARON LA IMAGEN
+
 sudo docker start [ID_CONTAINER]
+
 # ----------------------------------------
 
 sudo docker exec -it oracle /bin/bash
@@ -34,15 +38,21 @@ sh post_install.sh
 
 
 # ENTRAR A ORACLE 18C
+
 sqlplus
 
 user-name: sys as sysdba #USUARIO POR DEFECTO
+
 password: oracle #PASSWORD POR DEFECTO
 
 
 # CREAR OTRO USUARIO EN ORACLE
 alter session set "_ORACLE_SCRIPT"=true;
+
 create user **username** identified by **username**;
+
 grant all privileges to **username**;
+
 # PARA CONECTARSE A TRAVES DE CMD O POWERSHELL
+
 sqlplus **username**/**username**@**ip_externa**:1521/ORCL18
