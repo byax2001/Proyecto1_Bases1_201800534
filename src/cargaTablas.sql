@@ -14,283 +14,160 @@ DROP TABLE Pais;
 DROP TABLE Empleado;
 DROP TABLE Tienda;
 
----------------------
+--------------------------
 -- Insertar Ubicaciones --
----------------------
-INSERT INTO Ubicacion (nombre) 
+--------------------------
+INSERT INTO Ubicacion (ubicacion) 
 SELECT DISTINCT
-    temporal.pais_cliente 
+    temporal.direccion_victima,
+    temporal.direccion_hospital,
+    temporal.ubicacion_victima
 FROM temporal
-WHERE temporal.pais_cliente != '-';
-
-SELECT * FROM pais;
-
------------------------
--- Insertar Ciudades --
------------------------
-INSERT INTO ciudad (nombre, codigo_postal,id_pais) 
-SELECT DISTINCT
-    temporal.ciudad_cliente,
-    temporal.codigo_postal_cliente,
-    pais.id_pais    
-FROM temporal, pais
 WHERE 
-    pais.nombre = temporal.pais_cliente AND
-    temporal.codigo_postal_cliente != '-' AND
-    temporal.ciudad_cliente != '-'
+    temporal.direccion_victima is not null AND 
+    temporal.direccion_hospital is not null AND 
+    temporal.ubicacion_victima is not null 
 ;
 
-SELECT * FROM ciudad
-ORDER BY id_ciudad;
+SELECT * FROM ubicacion;
+ORDER by id_ubicacion;
+
+--------------------------
+---Insertar Tratamiento---
+--------------------------
+INSERT INTO Tratamiento (nombre,efectividad) 
+SELECT DISTINCT
+    temporal.TRATAMIENTO,
+    temporal.EFECTIVIDAD,
+FROM temporal
+WHERE 
+    temporal.tratamiento is not null AND 
+    temporal.EFECTIVIDAD is not null
+;
+SELECT * FROM Tratamiento;
+ORDER by id_tratamiento;
+
+----------------------------
+---Insertar Tipo Contacto---
+----------------------------
+INSERT INTO Tipo_contacto (nombre) 
+SELECT DISTINCT
+    temporal.CONTACTO_FISICO
+FROM temporal
+WHERE 
+    temporal.CONTACTO_FISICO is not null
+;
+SELECT * FROM Tipo_contacto;
+ORDER by id_tipocontacto;
+
+----------------------------
+--Insertar Allegado--
+----------------------------
+INSERT INTO Allegado (nombre,apellido,fecha_conocio) 
+SELECT DISTINCT
+    temporal.NOMBRE_ASOCIADO,
+    TEMPORAL.APELLIDO_ASOCIADO,
+    TEMPORAL.FECHA_CONOCIO
+FROM temporal
+WHERE 
+    temporal.NOMBRE_ASOCIADO is not null
+;
+SELECT * FROM Tipo_contacto;
+ORDER by id_allegado;
+
+-------------------------
+---Insertar Hospitales---
+-------------------------
+INSERT INTO Hospital (id_ubicacion, nombre) 
+SELECT DISTINCT
+    ubicacion.id_ubicacion    --tomar id de la ubicacion
+    temporal.NOMBRE_HOSPITAL, --tomar el nombre del hospital
+FROM Temporal, Ubicacion
+WHERE 
+    temporal.NOMBRE_HOSPITAL is not null AND --que el nombre del hospital no sea nulo
+    --BUSCA LA FILA DE UBICACION CON LA CONCIDENCIA Y LA REGRESA PARA EL DISTINCT
+    temporal.DIRECCION_HOSPITAL = Ubicacion.ubicacion --tomar el id_ubicacion donde ubicacion sea igual a direccion hospital
+;
+SELECT * FROM Hospital
+ORDER BY id_hospital;
+
+-----------------------
+-- Insertar Victima --
+-----------------------
+INSERT INTO Victima (nombre, apellido, id_direccion, fecha_primera_sospecha, fecha_confirmacion, fecha_muerte,status_enfermedad) 
+SELECT DISTINCT 
+       temporal.NOMBRE_VICTIMA,
+       temporal.APELLIDO_VICTIMA,
+       ubicacion.id_ubicacion,
+       temporal.FECHA_PRIMERA_SOSPECHA,
+       temporal.FECHA_CONFIRMACION,
+       TEMPORAL.FECHA_MUERTE,
+       TEMPORAL.ESTADO_VICTIMA
+FROM temporal, Ubicacion
+WHERE
+   TEMPORAL.DIRECCION_VICTIMA = Ubicacion.ubicacion
+;
+SELECT * FROM Victima;
 
 ----------------------
--- Insertar Tiendas --
+-- Insertar Registro (victima-Hospital) --
 ----------------------
-INSERT INTO tienda (direccion)
+INSERT INTO Registro(id_hospital,id_victima)
 SELECT DISTINCT 
-    temporal.direccion_tienda
-FROM temporal
-WHERE temporal.direccion_tienda != '-';
-
-SELECT * FROM tienda;
-
------------------------
--- Insertar Clientes --
------------------------
-INSERT INTO cliente (nombre, apellido, correo, direccion, fecha_reg, activo, videoteca_fav, id_ciudad) 
-SELECT DISTINCT 
-       SUBSTR(temporal.nombre_cliente, 1, INSTR(temporal.nombre_cliente, ' ')-1) AS "Nombre",
-       SUBSTR(temporal.nombre_cliente, INSTR(temporal.nombre_cliente, ' ')+1) AS "Apellido",
-       temporal.correo_cliente,
-       temporal.direccion_cliente,
-       TO_TIMESTAMP(temporal.fecha_creacion),
-       temporal.cliente_activo,
-       temporal.tienda_preferida,
-       CAST(ciudad.id_ciudad AS INTEGER)
-FROM temporal, ciudad
-WHERE
-    temporal.nombre_cliente != '-' AND
-    temporal.correo_cliente != '-' AND
-    temporal.direccion_cliente!= '-' AND
-    temporal.fecha_creacion != '-' AND
-    temporal.cliente_activo != '-' AND
-    temporal.tienda_preferida != '-' AND
-    ciudad.nombre = temporal.ciudad_cliente
-;
-SELECT * FROM cliente;
-
-
-------------------------
--- Insertar Empleados --
-------------------------
-INSERT INTO empleado (nombre, apellido, direccion, correo, activo, usuario, password, jefe_tienda, id_tienda)
-SELECT DISTINCT
-    SUBSTR(temporal.nombre_empleado, 1, INSTR(temporal.nombre_empleado, ' ')-1) AS "Nombre Empleado",
-    SUBSTR(temporal.nombre_empleado, INSTR(temporal.nombre_empleado, ' ')+1) AS "Apellido Empleado", 
-    temporal.direccion_empleado,
-    temporal.correo_empleado,
-    temporal.empleado_activo,
-    temporal.usuario_empleado,
-    temporal.contrasenia_empleado,
-    temporal.encargado_tienda,
-    CAST(tienda.id_tienda AS INTEGER)
-FROM temporal, tienda
-WHERE
-    temporal.nombre_empleado != '-' AND
-    tienda.direccion = temporal.direccion_tienda
-;
-
-SELECT * FROM empleado;
-
-------------------------------
--- Insertar Clasificaciones --
-------------------------------
-INSERT INTO clasificacion (clasificacion)
-SELECT DISTINCT
-    temporal.clasificacion
-FROM temporal
-WHERE temporal.clasificacion != '-';
-
-SELECT * FROM clasificacion;
-
-
-------------------------------
--- Insertar Categorias      --
-------------------------------
-INSERT INTO categoria(nombre)
-SELECT DISTINCT
-    temporal.categoria_pelicula
-FROM temporal
-WHERE temporal.categoria_pelicula != '-';
-
-SELECT * FROM categoria;
-
-------------------------------
--- Insertar Idiomas         --
-------------------------------
-INSERT INTO idioma(idioma)
-SELECT DISTINCT
-    temporal.lenguaje_pelicula
-FROM temporal
-WHERE temporal.lenguaje_pelicula != '-';
-
-SELECT * FROM idioma;
-
-------------------------------
--- Insertar Actores         --
-------------------------------
-INSERT INTO actor(nombre, apellido)
-SELECT DISTINCT
-    SUBSTR(temporal.actor_pelicula, 1, INSTR(temporal.actor_pelicula, ' ')-1) AS "Nombre Actor",
-    SUBSTR(temporal.actor_pelicula, INSTR(temporal.actor_pelicula, ' ')+1) AS "Apellido Actor"
-FROM temporal
-WHERE temporal.actor_pelicula != '-';
-
-
-------------------------------
--- Insertar Peliculas       --
-------------------------------
-INSERT INTO pelicula(titulo, descripcion, lanzamiento, duracion, dias_renta,
-                    costo_renta, cargo_extra, idioma_original, id_clasificacion)
-SELECT DISTINCT
-    temporal.nombre_pelicula AS "NOMBRE",
-    temporal.descripcion_pelicula AS "DESCRIPCION",
-    temporal.anio_lanzamiento AS "LANZAMIENTO",
-    temporal.duracion AS "DIRECCION",
-    temporal.dias_renta AS "DIAS RENTA",
-    temporal.costo_renta AS "COSTO RENTA",
-    temporal.costo_por_danio AS "COSTO POR DANIO",
-    temporal.lenguaje_pelicula AS "IDIOMA",
-    clasificacion.id_clasificacion AS "CLASIFICACION"
-FROM 
-    temporal, clasificacion
-WHERE
-    temporal.nombre_pelicula !='-'
-    AND temporal.descripcion_pelicula !='-'
-    AND temporal.anio_lanzamiento !='-'
-    AND temporal.duracion !='-'
-    AND temporal.dias_renta !='-'
-    AND temporal.clasificacion = clasificacion.clasificacion
-;
-
-SELECT * FROM pelicula;
-
-
-
----------------------------------
--- Insertar Categoria_Pelicula --
----------------------------------
-INSERT INTO categoria_pelicula (id_categoria,id_pelicula)
-SELECT DISTINCT
-    categoria.id_categoria,
-    pelicula.id_pelicula
-FROM 
-    categoria, 
-    pelicula, 
-    temporal
-WHERE
-    temporal.nombre_pelicula = pelicula.titulo 
-    AND temporal.categoria_pelicula = categoria.nombre
-ORDER BY categoria.id_categoria;
-
-
----------------------------------
--- Insertar Pelicula_Actor     --
----------------------------------
-INSERT INTO pelicula_actor(id_pelicula, id_actor)
-SELECT DISTINCT
-    pelicula.id_pelicula,
-    actor.id_actor
-FROM 
-    pelicula,
-    actor,
-    temporal
-WHERE
-    temporal.nombre_pelicula = pelicula.titulo
-    AND temporal.actor_pelicula = CONCAT(CONCAT( actor.nombre,' '), actor.apellido)
-;
-
----------------------------------
--- Insertar Traduccion         --
----------------------------------
-INSERT INTO traduccion (id_idioma,id_pelicula)
-SELECT DISTINCT
-    idioma.id_idioma,
-    pelicula.id_pelicula
-FROM 
-    idioma,
-    pelicula,
-    temporal
+    Hospital.id_hospital,
+    victima.id_victima,
+FROM Temporal, Hospital, victima, 
 WHERE 
-    temporal.lenguaje_pelicula = idioma.idioma 
-    AND temporal.nombre_pelicula = pelicula.titulo
-;
+    Temporal.NOMBRE_HOSPITAL != NULL AND
+    temporal.NOMBRE_HOSPITAL = Hospital.nombre and
+    temporal.NOMBRE_VICTIMA = Victima.nombre;
+SELECT * FROM Registro;
 
----------------------------------
--- Insertar Inventario         --
----------------------------------
-INSERT INTO inventario(id_tienda, id_pelicula)
+
+----------------------------------
+-- Insertar Victima-tratamiento --
+----------------------------------
+INSERT INTO victima_tratamiento(id_victima,id_tratamiento,efectividad_en_victima,FECHA_INICIO_TRATAMIENTO,FECHA_FIN_TRATAMIENTO)
+SELECT DISTINCT 
+    Victima.id_victima,
+    Tratamiento.id_tratamiento,
+    TEMPORAL.EFECTIVIDAD_EN_VICTIMA,
+    TEMPORAL.FECHA_INICIO_TRATAMIENTO,
+    TEMPORAL.FECHA_FIN_TRATAMIENTO
+FROM Temporal, Hospital, victima, 
+WHERE 
+    TEMPORAL.TRATAMIENTO = Tratamiento.nombre and
+    TEMPORAL.NOMBRE_ASOCIADO = Victima.nombre
+SELECT * FROM victima_tratamiento;
+
+----------------------------
+---Insertar Lugar_victima---
+----------------------------
+INSERT INTO victima_tratamiento(id_victima,id_ubicacion,fecha_llegada,fecha_retiro)
+SELECT DISTINCT 
+    Victima.id_victima,
+    Ubicacion.ubicacion
+    TEMPORAL.FECHA_LLEGADA,
+    TEMPORAL.FECHA_RETIRO
+FROM Temporal, Ubicacion, victima, 
+WHERE 
+    TEMPORAL.UBICACION_VICTIMA = Ubicacion.ubicacion and
+    TEMPORAL.NOMBRE_ASOCIADO = Victima.nombre
+SELECT * FROM victima_tratamiento;
+
+----------------------------------------
+-- Insertar Contacto(Allegado-Victima)--
+----------------------------------------
+INSERT INTO Contacto(id_victima,id_allegado,id_tipocontacto,fecha_inicio_contacto,fecha_fin_contacto)
 SELECT DISTINCT
-    tienda.id_tienda,
-    pelicula.id_pelicula
-FROM
-    tienda,
-    pelicula,
-    temporal
-WHERE
-    temporal.direccion_tienda = tienda.direccion
-    AND temporal.nombre_pelicula = pelicula.titulo
-;
-
-SELECT COUNT(*) FROM inventario;
-
----------------------------------
--- Insertar Renta              --
----------------------------------
-INSERT INTO renta (id_cliente, id_empleado, pago, fecha_pago, fecha_rent,
-                    fecha_dev, id_pelicula)
-SELECT DISTINCT
-    CAST(cliente.id_cliente AS INTEGER),
-    CAST(empleado.id_empleado AS INTEGER),
-    CAST(temporal.monto_a_pagar AS FLOAT),
-    TO_TIMESTAMP(temporal.fecha_pago),
-    TO_TIMESTAMP(temporal.fecha_renta),
-    TO_TIMESTAMP(temporal.fecha_retorno),
-    CAST(pelicula.id_pelicula AS INTEGER)
-FROM 
-    cliente,
-    empleado,
-    temporal,
-    pelicula
-WHERE
-    temporal.nombre_cliente = CONCAT(CONCAT( cliente.nombre,' '), cliente.apellido)
-    AND temporal.nombre_empleado = CONCAT(CONCAT(empleado.nombre,' '), empleado.apellido)
-    AND temporal.nombre_pelicula = pelicula.titulo
-    AND temporal.fecha_pago != '-'
-    AND temporal.fecha_renta != '-'
-    AND temporal.fecha_retorno != '-'
-;
-
-SELECT COUNT(*) FROM renta;
-
-
-COMMIT;
-
-
-
-SELECT 
-    cliente.nombre,
-    pelicula.titulo
-FROM renta, cliente, pelicula
-WHERE
-    renta.id_cliente = cliente.id_cliente
-    AND renta.id_pelicula = pelicula.id_pelicula
-ORDER BY cliente.nombre;
-
-
-
-SELECT  DISTINCT temporal.nombre_cliente, temporal.nombre_pelicula,
-        temporal.fecha_renta
-FROM temporal
-WHERE nombre_cliente != '-'
-ORDER BY temporal.nombre_cliente;
+    Victima.id_victima,
+    Allegado.id_allegado,
+    Tipo_contacto.id_tipocontacto,
+    TEMPORAL.FECHA_INICIO_CONTACTO,
+    TEMPORAL.FECHA_FIN_CONTACTO
+FROM temporal,Victima,Allegado
+WHERE 
+    TEMPORAL.NOMBRE_VICTIMA = Victima.nombre and
+    TEMPORAL.NOMBRE_ASOCIADO = Allegado.nombre and
+    TEMPORAL.CONTACTO_FISICO = Tipo_contacto.tipo_contacto;
+SELECT * FROM CONTACTO;
