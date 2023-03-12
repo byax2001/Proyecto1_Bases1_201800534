@@ -1,18 +1,13 @@
-DROP TABLE Categoria_Pelicula;
-DROP TABLE Categoria;
-DROP TABLE Traduccion;
-DROP TABLE Idioma;
-DROP TABLE Pelicula_Actor;
-DROP TABLE Actor;
-DROP TABLE Inventario;
-DROP TABLE Renta;
-DROP TABLE Pelicula;
-DROP TABLE Clasificacion;
-DROP TABLE Cliente;
-DROP TABLE Ciudad;
-DROP TABLE Pais;
-DROP TABLE Empleado;
-DROP TABLE Tienda;
+DROP TABLE Ubicacion;
+DROP TABLE TRATAMIENTO;
+DROP Table tipo_contacto;
+drop Table Allegado;
+DROP TABLE hospital;
+DROP TABLE Victima;
+DROP TABLE REGISTRO;
+DROP TABLE victima_tratamiento;
+DROP TABLE Lugar_victima;
+DROP TABLE CONTACTO;
 
 --------------------------
 -- Insertar Ubicaciones --
@@ -116,11 +111,12 @@ INSERT INTO Registro(id_hospital,id_victima)
 SELECT DISTINCT 
     Hospital.id_hospital,
     victima.id_victima,
-FROM Temporal, Hospital, victima, 
+FROM Temporal, Hospital, victima 
 WHERE 
     Temporal.NOMBRE_HOSPITAL != NULL AND
     temporal.NOMBRE_HOSPITAL = Hospital.nombre and
     temporal.NOMBRE_VICTIMA = Victima.nombre;
+
 SELECT * FROM Registro;
 
 
