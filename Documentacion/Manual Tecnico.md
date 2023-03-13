@@ -55,7 +55,7 @@ user-name: sys as sysdba #USUARIO POR DEFECTO
 password: oracle #PASSWORD POR DEFECTO
 ~~~
 
-### Crear un Usuario en Oracle
+### Crear un Usuario en Oracle (Sustituir asteriscos y variables)
 ~~~bash
 alter session set "_ORACLE_SCRIPT"=true;
 
@@ -63,7 +63,7 @@ create user **username** identified by **username**;
 
 grant all privileges to **username**;
 ~~~
-### Comando para conectarse a la base de datos desde CMD y Powershell
+### Comando para conectarse a la base de datos desde CMD y Powershell (Sustituir asteriscos y variables)
 
 ~~~bash
 sqlplus **username**/**username**@**ip_externa maquina virtual**:1521/ORCL18
