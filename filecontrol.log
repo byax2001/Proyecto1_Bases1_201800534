@@ -1,9 +1,76 @@
 
-SQL*Loader: Release 18.0.0.0.0 - Production on Sun Mar 5 20:01:34 2023
+SQL*Loader: Release 18.0.0.0.0 - Production on Sun Mar 12 22:52:52 2023
 Version 18.5.0.0.0
 
 Copyright (c) 1982, 2018, Oracle and/or its affiliates.  All rights reserved.
 
-SQL*Loader-704: Internal error: ulconnect: OCIServerAttach [0]
-ORA-12560: TNS:protocol adapter error
+Control File:   filecontrol.ctl
+Character Set UTF8 specified for all input.
+First primary datafile DB_Excel.csv has a
+ utf8 byte order mark in it.
 
+Data File:      DB_Excel.csv
+  Bad File:     DB_Excel.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 1
+Errors allowed: 50
+Bind array:     250 rows, maximum of 1048576 bytes
+Continuation:    none specified
+Path used:      Conventional
+
+Table TEMPORAL, loaded from every logical record.
+Insert option in effect for this table: TRUNCATE
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+NOMBRE_VICTIMA                      FIRST     *   ;       CHARACTER            
+APELLIDO_VICTIMA                     NEXT     *   ;       CHARACTER            
+DIRECCION_VICTIMA                    NEXT     *   ;       CHARACTER            
+FECHA_PRIMERA_SOSPECHA               NEXT     *   ;       DATE DD-MM-YYYY HH24:MI
+FECHA_CONFIRMACION                   NEXT     *   ;       DATE DD-MM-YYYY HH24:MI
+FECHA_MUERTE                         NEXT     *   ;       DATE DD-MM-YYYY HH24:MI
+ESTADO_VICTIMA                       NEXT     *   ;       CHARACTER            
+NOMBRE_ASOCIADO                      NEXT     *   ;       CHARACTER            
+APELLIDO_ASOCIADO                    NEXT     *   ;       CHARACTER            
+FECHA_CONOCIO                        NEXT     *   ;       DATE DD-MM-YYYY HH24:MI
+CONTACTO_FISICO                      NEXT     *   ;       CHARACTER            
+FECHA_INICIO_CONTACTO                NEXT     *   ;       DATE DD-MM-YYYY HH24:MI
+FECHA_FIN_CONTACTO                   NEXT     *   ;       DATE DD-MM-YYYY HH24:MI
+NOMBRE_HOSPITAL                      NEXT     *   ;       CHARACTER            
+DIRECCION_HOSPITAL                   NEXT     *   ;       CHARACTER            
+UBICACION_VICTIMA                    NEXT     *   ;       CHARACTER            
+FECHA_LLEGADA                        NEXT     *   ;       DATE DD-MM-YYYY HH24:MI
+FECHA_RETIRO                         NEXT     *   ;       DATE DD-MM-YYYY HH24:MI
+TRATAMIENTO                          NEXT     *   ;       CHARACTER            
+EFECTIVIDAD                          NEXT     *   ;       CHARACTER            
+FECHA_INICIO_TRATAMIENTO             NEXT     *   ;       DATE DD-MM-YYYY HH24:MI
+FECHA_FIN_TRATAMIENTO                NEXT     *   ;       DATE DD-MM-YYYY HH24:MI
+EFECTIVIDAD_EN_VICTIMA               NEXT     *   ;       CHARACTER            
+
+value used for ROWS parameter changed from 250 to 176
+
+Table TEMPORAL:
+  14032 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                1044384 bytes(176 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          1
+Total logical records read:         14032
+Total logical records rejected:         0
+Total logical records discarded:        0
+
+Run began on Sun Mar 12 22:52:52 2023
+Run ended on Sun Mar 12 22:53:08 2023
+
+Elapsed time was:     00:00:16.19
+CPU time was:         00:00:00.47
