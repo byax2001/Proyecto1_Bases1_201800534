@@ -55,7 +55,7 @@ router.get("/consulta4",async function(req,res){
 })
 router.get("/consulta5",async function(req,res){
     let consulta= `
-    SELECT v.NOMBRE, V.APELLIDO, t.NOMBRE, COUNT(vt.ID_P_TRATAMIENTO) AS Tratamientos 
+    SELECT v.NOMBRE AS NOMBRE_VICTIMA, V.APELLIDO, t.NOMBRE AS NOMBRE_TRATAMIENTO, COUNT(vt.ID_P_TRATAMIENTO) AS Tratamientos 
     FROM VICTIMA v 
     JOIN VICTIMA_TRATAMIENTO vt ON vt.ID_VICTIMA = v.ID_VICTIMA 
     JOIN TRATAMIENTO t ON t.ID_TRATAMIENTO = vt.ID_TRATAMIENTO 
@@ -476,38 +476,7 @@ router.get("/cargarModelo",async function(req,res){
         return res.status(500).send('Error al realizar la consulta');
     }
 })
-router.get("/c",async function(req,res){
-    let connection;
-    try {
-        // establecer la conexión con la base de datos
-        connection = await oracledb.getConnection(dbConfig);
-        // realizar la consulta
-        const options = {
-            autoCommit: true
-        }
-        //RELLENAR TABLAS
-        await connection.execute(`INSERT INTO Ubicacion(Ubicacion)
-        SELECT DISTINCT temporal.direccion_victima FROM TEMPORAL union
-        select DISTINCT temporal.direccion_hospital FROM TEMPORAL union
-        select DISTINCT temporal.ubicacion_victima FROM TEMPORAL
-        WHERE 
-            temporal.direccion_victima is not null AND 
-            temporal.direccion_hospital is not null AND 
-            temporal.ubicacion_victima is not null 
-        `,[],options);
-        
 
-        connection.close();
-        // devolver el resultado como un JSON
-        return res.json({estado:"Tablas creadas y cargadas"})
-    } catch (err) {
-        console.error(err.message);
-        if (connection) {
-        await connection.close();
-        }
-        return res.status(500).send('Error al realizar la consulta');
-    }
-})
 
 m_consulta=async(req,res,consulta)=>{
     let connection;
