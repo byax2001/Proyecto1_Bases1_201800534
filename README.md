@@ -1,4 +1,4 @@
-### Bases de datos 1, proyecto 1
+### Bases de datos 1, Proyecto 1
 
 | Carnet | Nombre | 
 |:--------------|:-------------:|
