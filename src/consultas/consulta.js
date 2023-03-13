@@ -344,6 +344,9 @@ router.get("/cargarModelo",async function(req,res){
         )`);
         
         //RELLENAR TABLAS
+        const options = {
+            autoCommit: true
+        }
         await connection.execute(`INSERT INTO Ubicacion(ubicacion)
         SELECT DISTINCT temporal.direccion_victima FROM TEMPORAL union
         select DISTINCT temporal.direccion_hospital FROM temporal union
@@ -352,7 +355,7 @@ router.get("/cargarModelo",async function(req,res){
             temporal.direccion_victima is not null AND 
             temporal.direccion_hospital is not null AND 
             temporal.ubicacion_victima is not null 
-        `);
+        `,[],options);
         
 
         await connection.execute(`INSERT INTO Tratamiento (nombre,efectividad) 
@@ -363,7 +366,7 @@ router.get("/cargarModelo",async function(req,res){
         WHERE 
             temporal.tratamiento is not null AND 
             temporal.EFECTIVIDAD is not null
-        `);
+        `,[],options);
 
 
         await connection.execute(`INSERT INTO Tipo_contacto(tipo_contacto) 
@@ -372,7 +375,7 @@ router.get("/cargarModelo",async function(req,res){
         FROM temporal
         WHERE 
             temporal.CONTACTO_FISICO is not null
-        `);
+        `,[],options);
 
 
         await connection.execute(`INSERT INTO ALLEGADO(nombre,apellido) 
@@ -382,7 +385,7 @@ router.get("/cargarModelo",async function(req,res){
         FROM TEMPORAL
         WHERE 
             TEMPORAL.NOMBRE_ASOCIADO is not null
-        `);
+        `,[],options);
 
         await connection.execute(`INSERT INTO Hospital (id_ubicacion, nombre) 
         SELECT DISTINCT
@@ -392,7 +395,7 @@ router.get("/cargarModelo",async function(req,res){
         WHERE 
             temporal.NOMBRE_HOSPITAL is not null AND 
             temporal.DIRECCION_HOSPITAL = Ubicacion.ubicacion 
-        `);
+        `,[],options);
 
         await connection.execute(`INSERT INTO Victima (nombre, apellido, id_direccion, fecha_primera_sospecha, fecha_confirmacion, fecha_muerte,status_enfermedad) 
         SELECT DISTINCT 
@@ -406,7 +409,7 @@ router.get("/cargarModelo",async function(req,res){
         FROM temporal, Ubicacion
         WHERE
         TEMPORAL.DIRECCION_VICTIMA = Ubicacion.ubicacion
-        `);
+        `,[],options);
         await connection.execute(`INSERT INTO Registro(id_hospital,id_victima)
         SELECT DISTINCT 
             Hospital.id_hospital,
@@ -416,7 +419,7 @@ router.get("/cargarModelo",async function(req,res){
             temporal.NOMBRE_HOSPITAL = Hospital.nombre and
             temporal.NOMBRE_VICTIMA = Victima.nombre AND 
             TEMPORAL.APELLIDO_VICTIMA = Victima.APELLIDO 
-        `);
+        `,[],options);
 
 
         await connection.execute(`INSERT INTO victima_tratamiento(id_victima,id_tratamiento,efectividad_en_victima,FECHA_INICIO_TRATAMIENTO,FECHA_FIN_TRATAMIENTO)
@@ -431,7 +434,7 @@ router.get("/cargarModelo",async function(req,res){
             TEMPORAL.NOMBRE_VICTIMA = VICTIMA.NOMBRE AND
             TEMPORAL.APELLIDO_VICTIMA = VICTIMA.APELLIDO AND 
             TEMPORAL.TRATAMIENTO = TRATAMIENTO.NOMBRE 
-        `);
+        `,[],options);
 
         await connection.execute(`INSERT INTO Lugar_victima(id_victima,id_ubicacion,fecha_llegada,fecha_retiro)
         SELECT DISTINCT 
@@ -444,7 +447,7 @@ router.get("/cargarModelo",async function(req,res){
             TEMPORAL.UBICACION_VICTIMA = Ubicacion.ubicacion and
             TEMPORAL.NOMBRE_VICTIMA  = Victima.nombre AND 
             TEMPORAL.APELLIDO_VICTIMA  = Victima.APELLIDO 
-        `);
+        `,[],options);
 
 
         await connection.execute(`INSERT INTO ALLEGADO_victima(id_victima,id_allegado,id_tipocontacto,fecha_inicio_contacto,fecha_fin_contacto, fecha_conocio)
@@ -461,10 +464,42 @@ router.get("/cargarModelo",async function(req,res){
             temporal.APELLIDO_VICTIMA = victima.APELLIDO AND
             TEMPORAL.NOMBRE_ASOCIADO = ALLEGADO.NOMBRE  AND
             temporal.APELLIDO_ASOCIADO = allegado.APELLIDO AND 
-            TEMPORAL.CONTACTO_FISICO = TIPO_CONTACTO.TIPO_CONTACTO`);
+            TEMPORAL.CONTACTO_FISICO = TIPO_CONTACTO.TIPO_CONTACTO`,[],options);
         connection.close();
         // devolver el resultado como un JSON
         res.json({estado:"Tablas creadas y cargadas"})
+    } catch (err) {
+        console.error(err.message);
+        if (connection) {
+        await connection.close();
+        }
+        return res.status(500).send('Error al realizar la consulta');
+    }
+})
+router.get("/c",async function(req,res){
+    let connection;
+    try {
+        // establecer la conexión con la base de datos
+        connection = await oracledb.getConnection(dbConfig);
+        // realizar la consulta
+        const options = {
+            autoCommit: true
+        }
+        //RELLENAR TABLAS
+        await connection.execute(`INSERT INTO Ubicacion(Ubicacion)
+        SELECT DISTINCT temporal.direccion_victima FROM TEMPORAL union
+        select DISTINCT temporal.direccion_hospital FROM TEMPORAL union
+        select DISTINCT temporal.ubicacion_victima FROM TEMPORAL
+        WHERE 
+            temporal.direccion_victima is not null AND 
+            temporal.direccion_hospital is not null AND 
+            temporal.ubicacion_victima is not null 
+        `,[],options);
+        
+
+        connection.close();
+        // devolver el resultado como un JSON
+        return res.json({estado:"Tablas creadas y cargadas"})
     } catch (err) {
         console.error(err.message);
         if (connection) {
