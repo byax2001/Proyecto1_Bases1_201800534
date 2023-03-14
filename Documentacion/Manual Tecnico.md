@@ -10,7 +10,19 @@ de datos relacional.
 - Creación de consultas óptimas y funcionales para extraer reportería 
 de una base de datos.
 - Desarrollar una API para consumo y muestra de los resultados
-  
+#### Modelo Conceptual
+
+![modelo_conceptual](https://user-images.githubusercontent.com/63923585/224888715-f45978d5-cff6-4d07-9ab9-c56bed553e16.png)
+
+#### Modelo Logico
+![modelo_logico](https://user-images.githubusercontent.com/63923585/224888718-7fed6244-7afc-4cc7-b56d-6be1d59d11dc.png)
+
+#### Modelo Relacional
+![modelo_relacional](https://user-images.githubusercontent.com/63923585/224888722-262f11e5-4b26-4918-a4cd-cbfca66ca817.png)
+
+## Pasos para el uso de Oracle:
+> Una vez creada la maquina virtual, a traves de google cloud con una imagen de Ubuntu en este caso, se procede a ingresar a esta y ejecutar estos comandos:
+
 ### Usar Oracle a traves de una Maquina virtual:
 ~~~bash
 sudo apt-get update

@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9CF2391A-0224-8039-9A13-B8DB889A8DCB" name="Hospital">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>A81ED963-A58F-B7C4-6BD3-20E33BA180DA</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_hospital" id="959C4AF4-7B6F-A259-540D-E911F2C00384">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>254D0EAE-6640-19FA-25EE-A990555BBD3C</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="E70E29BE-D575-58EA-3DD8-5CE72A21BDFB">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>A093608F-5F1D-9581-1CAB-CC8F3A9E42A5</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60 CHAR</dataTypeSize>
+<ownDataTypeParameters>60 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_ubicacion" id="B13A79AE-B817-B5A4-379D-EF1FE75FC9F0">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>AAC22A8D-5352-886E-342D-25301CC622C2</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Ubicacion_id_ubicacion" id="484EC7BD-186D-1890-F41B-076F8B17F209">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>5E336568-DE36-2A0B-B78C-4B722B8EEAAE</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8CD6710C-9F86-D141-16B8-CDDA329BB5D9" referredColumn="AABB1F7B-7F42-1B85-A635-12E771D47ED2"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0274B5B2-BD17-FE6A-3027-A63320E8F569" name="Hospital_PK">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>5B6E9FBA-469B-2FB6-8035-62DCC0E60A63</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="959C4AF4-7B6F-A259-540D-E911F2C00384"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A9E0B911-A525-7481-2BBB-BC70C18F0544" name="Hospital_Ubicacion_FK">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>8B8B1A0D-4403-0122-212E-3CE0B743AFC7</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="484EC7BD-186D-1890-F41B-076F8B17F209"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

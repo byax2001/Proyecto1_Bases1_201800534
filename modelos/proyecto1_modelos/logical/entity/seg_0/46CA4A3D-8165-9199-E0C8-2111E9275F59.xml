@@ -1,0 +1,159 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="46CA4A3D-8165-9199-E0C8-2111E9275F59" name="Allegado_victima">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 02:03:14 UTC</createdTime>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<engineerTo>
+<item key="E172AED4-7457-DB6C-AF61-8ECDCCD8EEF1" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_allegadovictima" id="69B52C7E-C131-4DAA-2051-78C757616C80">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 02:03:57 UTC</createdTime>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<engineerTo>
+<item key="E172AED4-7457-DB6C-AF61-8ECDCCD8EEF1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_victima" id="B38C4DFB-6BAD-DD4B-0558-E09A0EAE7E6C">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 02:04:16 UTC</createdTime>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<engineerTo>
+<item key="E172AED4-7457-DB6C-AF61-8ECDCCD8EEF1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_allegado" id="36304BD5-CF96-9B35-645D-9BCFBA690F9E">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 02:04:36 UTC</createdTime>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<engineerTo>
+<item key="E172AED4-7457-DB6C-AF61-8ECDCCD8EEF1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_tipocontacto" id="D82C7D36-50EA-E40A-EFC7-98A51FBD058F">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 02:04:38 UTC</createdTime>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<engineerTo>
+<item key="E172AED4-7457-DB6C-AF61-8ECDCCD8EEF1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_conocio" id="162F512B-D4BC-8935-0401-173FEFC8E540">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 02:05:02 UTC</createdTime>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<engineerTo>
+<item key="E172AED4-7457-DB6C-AF61-8ECDCCD8EEF1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_inicio_contacto" id="E3B4B5B4-078B-364C-B4CA-7F3D50DA19A1">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 02:05:26 UTC</createdTime>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<engineerTo>
+<item key="E172AED4-7457-DB6C-AF61-8ECDCCD8EEF1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_fin_contacto" id="07463C53-8008-DC09-C0C3-261580CE1F64">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 02:05:32 UTC</createdTime>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<engineerTo>
+<item key="E172AED4-7457-DB6C-AF61-8ECDCCD8EEF1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_victima1" id="D135220D-2771-4309-BB94-2AB98A7900FA">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 02:26:27 UTC</createdTime>
+<generatorID>70A42080-1552-5CD3-B8B5-2B8A83E09ED9</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<engineerTo>
+<item key="E172AED4-7457-DB6C-AF61-8ECDCCD8EEF1" value="true"/>
+</engineerTo>
+<referedAttribute>3755525F-0781-81F6-0876-01BE69CAA2AB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_allegado1" id="D93B35AD-D188-81BD-DDAA-2CCCC707182E">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 02:26:34 UTC</createdTime>
+<generatorID>E1321F87-9047-9D16-ABE8-910BBD990A1D</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<engineerTo>
+<item key="E172AED4-7457-DB6C-AF61-8ECDCCD8EEF1" value="true"/>
+</engineerTo>
+<referedAttribute>5F34D3C1-DD55-0318-4DBA-E677B128546B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_tipocontacto1" id="DD8D361B-E680-B49F-4F67-7FEA2994AF1A">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 02:28:48 UTC</createdTime>
+<generatorID>4257FFDA-1724-8FD4-B3E8-A86A8237EE15</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<engineerTo>
+<item key="E172AED4-7457-DB6C-AF61-8ECDCCD8EEF1" value="true"/>
+</engineerTo>
+<referedAttribute>089864CA-4721-6C81-8789-991AD633CE52</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="328DD6BE-0F5D-7343-EA6F-84A6809CCEDA" name="Allegado_victima PK">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 02:04:09 UTC</createdTime>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<engineerTo>
+<item key="E172AED4-7457-DB6C-AF61-8ECDCCD8EEF1" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>69B52C7E-C131-4DAA-2051-78C757616C80</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

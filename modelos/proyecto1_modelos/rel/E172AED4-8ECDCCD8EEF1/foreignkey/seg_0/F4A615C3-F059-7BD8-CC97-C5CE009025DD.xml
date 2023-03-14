@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F4A615C3-F059-7BD8-CC97-C5CE009025DD" containerWithKeyObject="A3380054-CE75-04F9-F030-E0F0FAB23DF3" localFKIndex="B2624B00-1C68-B225-308D-E482BEA74AFF" name="Allegado_victima_Allegado_FK">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:28 UTC</createdTime>
+<generatorID>E1321F87-9047-9D16-ABE8-910BBD990A1D</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<referredTableLongName>Allegado</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>53272079-2F8D-63E0-B473-140A63290AAD</referredTableID>
+<keyObject>5048E71E-C8D4-C715-EA2A-771AE5823CED</keyObject>
+<referredKeyID>5048E71E-C8D4-C715-EA2A-771AE5823CED</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_allegado</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

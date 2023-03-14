@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E04A7790-73EE-4370-CC6E-34999680C719" name="Registro">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 01:56:47 UTC</createdTime>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<engineerTo>
+<item key="E172AED4-7457-DB6C-AF61-8ECDCCD8EEF1" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_registro" id="0CD6B135-C4FA-CB8F-AD9D-0AF1C9B0C430">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 01:57:04 UTC</createdTime>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<engineerTo>
+<item key="E172AED4-7457-DB6C-AF61-8ECDCCD8EEF1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_hospital" id="4E1F690C-64F7-7A84-740E-F7B8A71710F8">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 01:57:23 UTC</createdTime>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<engineerTo>
+<item key="E172AED4-7457-DB6C-AF61-8ECDCCD8EEF1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_victima" id="F8F91194-FB59-AA21-4A03-BD1A2A3F3629">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 01:57:47 UTC</createdTime>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<engineerTo>
+<item key="E172AED4-7457-DB6C-AF61-8ECDCCD8EEF1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_victima1" id="0A9C1E46-0198-5BD6-A08F-895522057C31">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 02:19:28 UTC</createdTime>
+<generatorID>67D49F42-6079-3DA2-038F-AB63F8AA4C9F</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<engineerTo>
+<item key="E172AED4-7457-DB6C-AF61-8ECDCCD8EEF1" value="true"/>
+</engineerTo>
+<referedAttribute>3755525F-0781-81F6-0876-01BE69CAA2AB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_hospital1" id="6D1DCEC0-107D-94F2-BB36-323CD31A084F">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 02:22:50 UTC</createdTime>
+<generatorID>A88F44E9-7A28-4C4C-CD6C-ED27930B7445</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<engineerTo>
+<item key="E172AED4-7457-DB6C-AF61-8ECDCCD8EEF1" value="true"/>
+</engineerTo>
+<referedAttribute>254D0EAE-6640-19FA-25EE-A990555BBD3C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="6AA5E46E-A770-EDF9-4A8C-178F9A68326F" name="Registro PK">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 01:57:19 UTC</createdTime>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<engineerTo>
+<item key="E172AED4-7457-DB6C-AF61-8ECDCCD8EEF1" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>0CD6B135-C4FA-CB8F-AD9D-0AF1C9B0C430</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

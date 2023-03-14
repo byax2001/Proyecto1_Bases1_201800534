@@ -1,0 +1,144 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C7A88EF1-D0B4-74AA-28BB-B55B96F329B4" name="victima_tratamiento">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>A2F4C04D-DEFC-BA32-EF7F-D35146CF6B0C</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_p_tratamiento" id="78A2CD9C-9A2D-41C0-F45F-D68FE41529B1">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>9AE382A3-FA0D-3C42-93A2-117952DA4214</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_victima" id="22505C79-0DD3-888B-216B-068B2A3DA9E5">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>03D199EE-0CE9-F32B-0D80-DB14524618C8</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_tratamiento" id="C6AB3999-A484-C465-7057-ED8FDF3294BB">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>E41FACFB-3BC9-592E-AB93-22C66BA8B306</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="efectividad_en_victima" id="EFF366AE-C464-FF24-ACB5-378C93C80A3B">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>D3EAEA51-60D1-D184-3C47-135C062BB360</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_inicio_tratamiento" id="D6690A80-16B2-5A17-BB8B-E6EE95E0B0FD">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>F8705CBA-EFFB-6F5C-AAF4-FEC2798FC175</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_fin_tratamiento" id="1D589F06-C5EB-6F24-5707-F6D167468BCD">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>06FFA47E-72E4-EBA4-2B45-4A51AC170559</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Tratamiento_id_tratamiento" id="0BCE60F0-5505-CC2C-2F4D-002AAD02C465">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>F1D2281C-169D-D89E-FBC9-0C79A6CFB42C</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0AF712CD-90BD-F50C-6902-DE1B3F18D295" referredColumn="F8B0D101-4E7D-D32C-5A0F-EAB9DA9F1B61"/>
+</associations>
+</Column>
+<Column name="Victima_id_victima" id="6AA0269B-F8EA-C0B7-DB75-7D220153AB0D">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>07D30D87-F5E5-92AE-2012-AA41C5DE1FFD</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D8A5EBC0-96EA-34E0-1D34-4FB962FA9D5C" referredColumn="8C83B24C-6142-B3F1-7B48-A565506F0351"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8211B974-71DC-193E-8DB7-819300C447A4" name="victima_tratamiento_PK">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>1136BF9F-E9E9-CF6F-9CBA-F3977C84B646</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="78A2CD9C-9A2D-41C0-F45F-D68FE41529B1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="645670C5-1F0F-C48D-83E5-99D2E215B0A3" name="victima_tratamiento_Tratamiento_FK">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:28 UTC</createdTime>
+<generatorID>69476056-9723-6ECA-8560-D12A41B5BCE4</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0BCE60F0-5505-CC2C-2F4D-002AAD02C465"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="925B96A8-F8BC-1327-220F-DCFE49AD50A9" name="victima_tratamiento_Victima_FK">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:28 UTC</createdTime>
+<generatorID>76EC8F9A-279A-7AE2-0D40-49FAFC03CE16</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6AA0269B-F8EA-C0B7-DB75-7D220153AB0D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

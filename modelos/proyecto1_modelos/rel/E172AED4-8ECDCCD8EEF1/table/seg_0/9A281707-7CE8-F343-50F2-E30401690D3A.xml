@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9A281707-7CE8-F343-50F2-E30401690D3A" name="Tratamiento">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>47FD5C2F-3A81-86EE-916B-C2B9494B1B63</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_tratamiento" id="F8B0D101-4E7D-D32C-5A0F-EAB9DA9F1B61">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>407448D4-E90A-A7AE-EFB3-83159C8C2ECE</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="85FC7451-8EEA-4C09-6C37-414C3F2FAC14">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>B4213C7A-DE34-309F-6E6C-C24FBF9B46A2</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="efectividad" id="E712C06B-5BF8-8D0D-5B3A-8EADB1CEAAA6">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>1E2B542B-72E5-7C25-942B-20BF433BB706</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="35A7D98B-84B7-30EB-3FBB-515529D17B17" name="Tratamiento_PK">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>C0D967B1-8731-4B6A-4126-E438925F25B0</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F8B0D101-4E7D-D32C-5A0F-EAB9DA9F1B61"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

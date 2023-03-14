@@ -1,0 +1,146 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2E9A58BE-0DA4-855A-A126-8D0855F7E579" name="Victima">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>BE0AC88C-E067-D1BB-FFA9-A5BE9FD58B43</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_victima" id="8C83B24C-6142-B3F1-7B48-A565506F0351">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>3755525F-0781-81F6-0876-01BE69CAA2AB</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="56547195-C1E5-C4BE-BE14-7E45890732D1">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>38709985-90E5-107D-2438-91C51BEA87CD</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60 CHAR</dataTypeSize>
+<ownDataTypeParameters>60 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="apellido" id="F61A0928-F24F-0C6A-ED1F-58900F8E1F71">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>B2C8B542-9EC4-05BA-3681-5078D502B102</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60 CHAR</dataTypeSize>
+<ownDataTypeParameters>60 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_direccion" id="C12BFDDE-95C6-847B-BC79-FFCF5CE8DA67">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>805C63C1-691B-33D1-191E-758EB519B1EE</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_primera_sospecha" id="39528D3F-21F1-0F79-39AB-4A635A5F361F">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>D44D63EA-1293-BC19-48AF-F791499308BC</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_confirmacion" id="F4EECB34-51E8-A6CA-56D6-277D2B9446F2">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>DF4C2700-12A6-8344-879A-71E43D76EC2D</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_muerte" id="F1452BAB-8138-C711-4855-82589F4086F7">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>45B44ABD-DAF1-2658-299C-1A1D3AB3DAA3</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="status_enfermedad" id="9FC4650F-6B8C-7A09-373A-80859FF49F69">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>FB4510AE-B1EA-5272-0C41-FF5AFC40367D</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Ubicacion_id_ubicacion" id="5C06CE56-BFC5-482B-8012-B400CDAEFB60">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>F6C27752-C5F8-E214-531F-C2DA3632353E</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F7A050B7-4E9D-3751-88D3-01B8C725CEC1" referredColumn="AABB1F7B-7F42-1B85-A635-12E771D47ED2"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FB9CC595-D1FE-C7D5-6DB4-C576E3D68E82" name="Victima_PK">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>17B9E852-BC09-F763-05C1-1366010444D7</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8C83B24C-6142-B3F1-7B48-A565506F0351"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CA88BBF0-517E-DD8B-72EA-CBD25FD70EBE" name="Victima_Ubicacion_FK">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:28 UTC</createdTime>
+<generatorID>79EFC5F3-5B20-2D52-39FA-7B79B6C45674</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5C06CE56-BFC5-482B-8012-B400CDAEFB60"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,181 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A3380054-CE75-04F9-F030-E0F0FAB23DF3" name="Allegado_victima">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>46CA4A3D-8165-9199-E0C8-2111E9275F59</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_allegadovictima" id="2C0B0BD6-25F1-0B2B-5D13-504EF098188F">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>69B52C7E-C131-4DAA-2051-78C757616C80</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_victima" id="58A27043-B07B-3674-4D90-14B8A42E9F59">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>B38C4DFB-6BAD-DD4B-0558-E09A0EAE7E6C</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_allegado" id="70CD90A5-F361-8633-54EC-09C3D297C4E0">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>36304BD5-CF96-9B35-645D-9BCFBA690F9E</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_tipocontacto" id="AB973828-1903-88FF-6DD8-330868A5C1B3">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>D82C7D36-50EA-E40A-EFC7-98A51FBD058F</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_conocio" id="82EC45EC-1770-C530-00C8-04B8740307AB">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>162F512B-D4BC-8935-0401-173FEFC8E540</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_inicio_contacto" id="E9200EAE-BB64-97D7-8B30-9E0BA531F31A">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>E3B4B5B4-078B-364C-B4CA-7F3D50DA19A1</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_fin_contacto" id="BD82FEF2-E5B9-7A43-08F4-80AD3336669C">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>07463C53-8008-DC09-C0C3-261580CE1F64</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Victima_id_victima" id="23801F7E-182E-6766-0515-2456114A3D6E">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>D135220D-2771-4309-BB94-2AB98A7900FA</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5FBB288C-69D1-02D6-CC7A-CCC442E3AC61" referredColumn="8C83B24C-6142-B3F1-7B48-A565506F0351"/>
+</associations>
+</Column>
+<Column name="Allegado_id_allegado" id="5DA55DA8-30ED-3F63-FD45-6FD13085A19F">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>D93B35AD-D188-81BD-DDAA-2CCCC707182E</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F4A615C3-F059-7BD8-CC97-C5CE009025DD" referredColumn="DABFDBD6-C368-7839-CFEA-AC5A31FCFE47"/>
+</associations>
+</Column>
+<Column name="Tipo_contacto_id_tipocontacto" id="D02195EC-F182-819E-7E18-D4489EC7291C">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>DD8D361B-E680-B49F-4F67-7FEA2994AF1A</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="089F20A0-4344-3D9A-274A-3E0C5619B62D" referredColumn="E0A57458-94BA-D055-4E8E-4409C68A9045"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F053C949-DC9B-9C0F-6F02-B3A43A45DF5B" name="Allegado_victima_PK">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>328DD6BE-0F5D-7343-EA6F-84A6809CCEDA</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2C0B0BD6-25F1-0B2B-5D13-504EF098188F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ABC36B67-0E06-3EEF-E895-464D8C3D18B6" name="Allegado_victima_Victima_FK">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:28 UTC</createdTime>
+<generatorID>70A42080-1552-5CD3-B8B5-2B8A83E09ED9</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="23801F7E-182E-6766-0515-2456114A3D6E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B2624B00-1C68-B225-308D-E482BEA74AFF" name="Allegado_victima_Allegado_FK">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:28 UTC</createdTime>
+<generatorID>E1321F87-9047-9D16-ABE8-910BBD990A1D</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5DA55DA8-30ED-3F63-FD45-6FD13085A19F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E4CA9AE0-0B59-65E9-FEC3-5DD7928CEF24" name="Allegado_victima_Tipo_contacto_FK">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:28 UTC</createdTime>
+<generatorID>4257FFDA-1724-8FD4-B3E8-A86A8237EE15</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D02195EC-F182-819E-7E18-D4489EC7291C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

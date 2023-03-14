@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="23302EF3-A698-588C-FB76-E175C66030A8" name="Registro">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>E04A7790-73EE-4370-CC6E-34999680C719</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_registro" id="B1A47E50-CE7F-7611-AFBB-655658052AF9">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>0CD6B135-C4FA-CB8F-AD9D-0AF1C9B0C430</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_hospital" id="F2CBBD1F-120F-0B38-EB94-9787A7BDA03C">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>4E1F690C-64F7-7A84-740E-F7B8A71710F8</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_victima" id="017B3C78-0599-F685-CB47-6FF438937E75">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>F8F91194-FB59-AA21-4A03-BD1A2A3F3629</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Victima_id_victima" id="366D4960-FF9C-314C-ECE6-A253F3A71AC1">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>0A9C1E46-0198-5BD6-A08F-895522057C31</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EBB19E31-A9D2-A564-16F6-243054D162AF" referredColumn="8C83B24C-6142-B3F1-7B48-A565506F0351"/>
+</associations>
+</Column>
+<Column name="Hospital_id_hospital" id="7F345E64-1B6F-E664-C660-9F2BAB6A9901">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>6D1DCEC0-107D-94F2-BB36-323CD31A084F</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="65CC78C2-6743-5469-1B6A-90A05E671EF2" referredColumn="959C4AF4-7B6F-A259-540D-E911F2C00384"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A1109FC7-3A33-C7CC-AC59-B2AB266A296B" name="Registro_PK">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:27 UTC</createdTime>
+<generatorID>6AA5E46E-A770-EDF9-4A8C-178F9A68326F</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B1A47E50-CE7F-7611-AFBB-655658052AF9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E4634A8B-7CFE-9C15-1798-41225FD1F7FE" name="Registro_Victima_FK">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:28 UTC</createdTime>
+<generatorID>67D49F42-6079-3DA2-038F-AB63F8AA4C9F</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="366D4960-FF9C-314C-ECE6-A253F3A71AC1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4B68C746-BCEC-C4E0-79D7-05F93DD4E967" name="Registro_Hospital_FK">
+<createdBy>Brandon</createdBy>
+<createdTime>2023-03-14 03:19:28 UTC</createdTime>
+<generatorID>A88F44E9-7A28-4C4C-CD6C-ED27930B7445</generatorID>
+<ownerDesignName>proyecto1_modelos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7F345E64-1B6F-E664-C660-9F2BAB6A9901"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
