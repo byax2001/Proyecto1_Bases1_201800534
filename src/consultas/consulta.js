@@ -30,7 +30,8 @@ router.get("/consulta2",async function(req,res){
     FROM VICTIMA v 
     JOIN VICTIMA_TRATAMIENTO vt ON v.ID_VICTIMA = vt.ID_VICTIMA 
     JOIN TRATAMIENTO t ON vt.ID_TRATAMIENTO = t.ID_TRATAMIENTO 
-    WHERE v.STATUS_ENFERMEDAD = 'En cuarentena' AND t.NOMBRE = 'Transfusiones de sangre' AND vt.EFECTIVIDAD_EN_VICTIMA > 5`
+    WHERE v.STATUS_ENFERMEDAD = 'En cuarentena' AND t.NOMBRE = 'Transfusiones de sangre' AND vt.EFECTIVIDAD_EN_VICTIMA > 5
+    order by v.NOMBRE asc`
     m_consulta(req,res,consulta)
 })
 router.get("/consulta3",async function(req,res){
@@ -61,7 +62,7 @@ router.get("/consulta5",async function(req,res){
     JOIN TRATAMIENTO t ON t.ID_TRATAMIENTO = vt.ID_TRATAMIENTO 
     WHERE t.NOMBRE = 'Oxigeno' 
     GROUP BY v.NOMBRE, t.NOMBRE, v.APELLIDO 
-    ORDER BY Tratamientos 
+    ORDER BY v.NOMBRE
     FETCH FIRST 5 ROWS ONLY
     `
     m_consulta(req,res,consulta)
@@ -73,7 +74,8 @@ router.get("/consulta6",async function(req,res){
     JOIN TRATAMIENTO t ON t.ID_TRATAMIENTO =vt.ID_TRATAMIENTO 
     JOIN LUGAR_VICTIMA lv ON LV.ID_VICTIMA = V.ID_VICTIMA 
     JOIN UBICACION u ON U.ID_UBICACION = LV.ID_UBICACION 
-    WHERE u.UBICACION ='1987 Delphine Well' AND t.NOMBRE = 'Manejo de la presion arterial'`;
+    WHERE u.UBICACION ='1987 Delphine Well' AND t.NOMBRE = 'Manejo de la presion arterial'
+    ORDER BY v.NOMBRE`;
     m_consulta(req,res,consulta)
 })
 router.get("/consulta7",async function(req,res){
@@ -84,7 +86,8 @@ router.get("/consulta7",async function(req,res){
     JOIN REGISTRO R ON V.ID_VICTIMA = R.ID_VICTIMA
     JOIN ALLEGADO_VICTIMA AV ON V.ID_VICTIMA = AV.ID_VICTIMA
     GROUP BY V.ID_VICTIMA, V.NOMBRE, V.APELLIDO, U.UBICACION
-    HAVING COUNT(DISTINCT AV.ID_ALLEGADO) < 2 AND COUNT(DISTINCT VT.ID_TRATAMIENTO) = 2`;
+    HAVING COUNT(DISTINCT AV.ID_ALLEGADO) < 2 AND COUNT(DISTINCT VT.ID_TRATAMIENTO) = 2
+    ORDER BY v.NOMBRE`;
     m_consulta(req,res,consulta)
 
 })
@@ -121,7 +124,8 @@ router.get("/consulta9",async function(req,res){
     const consulta = `SELECT h.NOMBRE, (COUNT(R.ID_REGISTRO)/(SELECT COUNT(*) FROM VICTIMA)*100) AS PORCENTAJE, COUNT(R.ID_REGISTRO) AS N_REGISTROS
     FROM HOSPITAL h 
     JOIN REGISTRO r ON R.ID_HOSPITAL =H.ID_HOSPITAL 
-    GROUP BY h.NOMBRE `;
+    GROUP BY h.NOMBRE
+    ORDER BY PORCENTAJE DESC `;
     m_consulta(req,res,consulta)
 })
 router.get("/consulta10",async function(req,res){
@@ -144,7 +148,8 @@ router.get("/consulta10",async function(req,res){
             )
         )
     )
-    GROUP BY h.NOMBRE , c.TIPO_CONTACTO`
+    GROUP BY h.NOMBRE , c.TIPO_CONTACTO 
+    ORDER BY PORCENTAJE DESC`
     m_consulta(req,res,consulta)
 })
 router.get("/eliminarTemporal",async function(req,res){
