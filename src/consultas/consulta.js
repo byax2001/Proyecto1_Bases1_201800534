@@ -35,13 +35,13 @@ router.get("/consulta2",async function(req,res){
     m_consulta(req,res,consulta)
 })
 router.get("/consulta3",async function(req,res){
-    var consulta = `SELECT v.NOMBRE, V.APELLIDO , u.Ubicacion, COUNT(av.ID_ALLEGADO) AS ALLEGADOS 
+    var consulta = `SELECT v.NOMBRE, V.APELLIDO , u.Ubicacion 
     FROM VICTIMA v 
     JOIN UBICACION u ON u.ID_UBICACION =v.ID_DIRECCION 
     JOIN ALLEGADO_VICTIMA av ON av.ID_VICTIMA = V.ID_VICTIMA 
     WHERE v.FECHA_MUERTE IS not NULL 
     GROUP BY v.NOMBRE , V.APELLIDO, U.UBICACION 
-    HAVING COUNT(DISTINCT av.ID_ALLEGADO) > 3  ORDER BY allegados`
+    HAVING COUNT(DISTINCT av.ID_ALLEGADO) > 3  ORDER BY v.Nombre`
     m_consulta(req,res,consulta)
 })
 router.get("/consulta4",async function(req,res){
@@ -121,7 +121,7 @@ router.get("/consulta8",async function(req,res){
     m_consulta(req,res,consulta)
 })
 router.get("/consulta9",async function(req,res){
-    const consulta = `SELECT h.NOMBRE, (COUNT(R.ID_REGISTRO)/(SELECT COUNT(*) FROM VICTIMA)*100) AS PORCENTAJE, COUNT(R.ID_REGISTRO) AS N_REGISTROS
+    const consulta = `SELECT h.NOMBRE, (COUNT(R.ID_REGISTRO)/(SELECT COUNT(*) FROM REGISTRO r2)*100) AS PORCENTAJE, COUNT(R.ID_REGISTRO) AS N_REGISTROS
     FROM HOSPITAL h 
     JOIN REGISTRO r ON R.ID_HOSPITAL =H.ID_HOSPITAL 
     GROUP BY h.NOMBRE
